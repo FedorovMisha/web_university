@@ -6,6 +6,10 @@ class Router {
     function observe() {
         if($this->match()) {
             $path = 'application/controllers/'.$this->config['controller'].'.php';
+            if(!file_exists($path)){
+                echo "404";
+                return;
+            }
             require_once $path;
             if (class_exists($this->config["controller"])) {
                 $action = $this->config['action'];
@@ -15,7 +19,7 @@ class Router {
                 }
             }
         } else {
-            echo "[Router] => Not found";
+            echo "404";
         }
     }
 

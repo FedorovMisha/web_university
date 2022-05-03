@@ -28,6 +28,12 @@
         <li class="nav-item">
           <a class="nav-link" href="/album">Альбом</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Контакт</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/test">Тест</a>
+        </li>
       </ul>
       <span class="navbar-text">
         🤟

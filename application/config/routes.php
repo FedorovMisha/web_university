@@ -12,5 +12,17 @@ $routes = [
     'album' => [
         'controller' => "AlbumViewController",
         'action' => 'index'
+    ], 
+    'contact' => [
+        'controller' => 'ContactViewController',
+        'action' => 'index'
+    ],     
+    'contact/send' => [
+        'controller' => 'ContactViewController',
+        'action' => 'send'
+    ],
+    'test' => [
+        'controller' => 'TestViewController',
+        'action' => 'index'
     ]
 ];
