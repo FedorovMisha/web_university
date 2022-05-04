@@ -13,14 +13,14 @@ $routes = [
         'controller' => "AlbumViewController",
         'action' => 'index'
     ], 
-    'contact' => [
-        'controller' => 'ContactViewController',
-        'action' => 'index'
-    ],     
     'contact/send' => [
         'controller' => 'ContactViewController',
         'action' => 'send'
     ],
+    'contact' => [
+        'controller' => 'ContactViewController',
+        'action' => 'index'
+    ],     
     'test' => [
         'controller' => 'TestViewController',
         'action' => 'index'
