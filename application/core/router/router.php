@@ -15,7 +15,10 @@ class Router {
                 $action = $this->config['action'];
                 if (method_exists($this->config["controller"], $action)) {
                     $controller = new $this->config["controller"]($this->config);
-                    $controller->$action()->render();
+                    $action = $controller->$action();
+                    if(isset($action)) {
+                        $action->render();
+                    }
                 }
             }
         } else {
@@ -26,6 +29,8 @@ class Router {
     private function match() {
         include 'application/config/routes.php';
         $path = trim($_SERVER['REQUEST_URI'], "/");
+        $pos = strpos( $path, "?", 0 );
+        $path = substr($path, 0, $pos > 0 ? $pos: strlen($path));
         foreach($routes as $route => $args) {
             if(strcmp($route, $path) == 0) {
                 $this->config = $args;

@@ -33,6 +33,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/test">Тест</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guest-book">Гостевая книга</a>
+        </li>
       </ul>
       <span class="navbar-text">
         🤟

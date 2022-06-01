@@ -2,6 +2,7 @@
 
 require './application/core/router/router.php';
 require './application/core/services/PhotoService.php';
+require './application/core/Models/Blog.php';
 
 session_start();
 
