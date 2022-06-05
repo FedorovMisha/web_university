@@ -1,6 +1,11 @@
+<?php
+    require_once 'application/core/Models/ViewStatistic.php';
+    saveViewStatistic("Main");
+?>
+
 <div class="container">
     <div class="row" style="height: 50vh;">
-        <img src="public/images/avatar.png" class="w-100 h-100" style="object-fit: cover; object-position:bottom;" alt="">
+        <img src="/public/images/avatar.png" class="w-100 h-100" style="object-fit: cover; object-position:bottom;" alt="">
     </div>
     <div class="row mt-5">
         <h1>Misha Fedorov</h1>

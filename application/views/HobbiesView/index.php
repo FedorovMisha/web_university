@@ -1,4 +1,10 @@
 <?php
+    require_once 'application/core/Models/ViewStatistic.php';
+    saveViewStatistic("Hobbies");
+?>
+
+<?php
+
 
 function printHobbie($hobbie)
 {

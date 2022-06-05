@@ -1,4 +1,9 @@
 <?php
+    require_once 'application/core/Models/ViewStatistic.php';
+    saveViewStatistic("Album");
+?>
+
+<?php
 function insertPhoto($photo)
 {
     echo <<<EOL

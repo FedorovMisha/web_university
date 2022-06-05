@@ -53,8 +53,28 @@ $routes = [
         'controller' => 'BlogAdminViewController',
         'action' => 'blogs'
     ],
+    'admin/statistic' => [
+        'controller' => 'AdminViewController',
+        'action' => 'views'
+    ],
     'login' => [
         'controller' => 'ApplicationViewController',
-        'action' => 'index'
+        'action' => 'login'
+    ],
+    'register' => [
+        'controller' => 'ApplicationViewController',
+        'action' => 'register'
+    ],
+    'logout' => [
+        'controller' => 'ApplicationViewController',
+        'action' => 'logout'
+    ],
+    'app/login' => [
+        'controller' => 'ApplicationViewController',
+        'action' => 'postLogin'
+    ],
+    'app/register' => [
+        'controller' => 'ApplicationViewController',
+        'action' => 'postRegister'
     ]
 ];

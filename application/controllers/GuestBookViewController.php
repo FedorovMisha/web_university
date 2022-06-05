@@ -3,6 +3,7 @@
 require 'application/controllers/BaseViewController.php';
 require_once 'application/core/Models/CommentEntity.php';
 require_once 'application/views/core/View.php';
+require_once 'application/views/core/AdminView.php';
 require_once 'application/core/services/CommentService.php';
 
 class GuestBookViewController extends ViewController {
@@ -38,14 +39,17 @@ class GuestBookViewController extends ViewController {
     }
 
     function admin() {
+        parent::dropToLoginIfNotAdmin();
 
-        return new View([
+        return new AdminView([
             'controller' => 'GuestBookViewController',
             'action' => 'admin'
         ]);
     }
 
     function uploadComments() {
+        parent::dropToLoginIfNotAdmin();
+
         if(!empty($_FILES)) {
             $this->service->moveFile($_FILES["comments"]["tmp_name"]);
             echo "200 ok\n";

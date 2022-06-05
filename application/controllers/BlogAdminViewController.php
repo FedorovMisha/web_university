@@ -2,6 +2,7 @@
 
 require 'application/controllers/BaseViewController.php';
 require_once 'application/core/Models/Blog.php';
+require_once 'application/views/core/AdminView.php';
 require_once 'application/views/core/View.php';
 
 
@@ -9,10 +10,13 @@ class BlogAdminViewController extends ViewController {
 
 
     function index() {
-        return new View($this->route);
+        parent::dropToLoginIfNotAdmin();
+        return new AdminView($this->route);
     }
 
     function create() {
+        parent::dropToLoginIfNotAdmin();
+
         if(!empty($_POST) && !empty($_FILES)) {
             $label = $_POST["label"];
             $desc = $_POST["desc"];

@@ -44,6 +44,25 @@ class ActiveRecord {
         return $ar_obj;
     }
 
+    public static function findBy($name, $value) {
+        $sql = "select * from ".static::$tableName." where ".$name." = '".$value."'";
+        $stmt = static::$pdo->query($sql);
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if(!$row) {
+            return false;
+        }
+
+        $ar_obj = new static();
+
+        foreach($row as $key => $value) {
+            $ar_obj->$key=$value;
+        }
+
+        return $ar_obj;
+    }
+
     public function save() {}
 
     public static function findAll() {
@@ -80,7 +99,7 @@ class ActiveRecord {
 
     public static function getPage($page, $pageSize) {
         $offset = ($page - 1) * $pageSize;
-        $sql = "SELECT * FROM blog ORDER BY id DESC LIMIT $offset, $pageSize";
+        $sql = "SELECT * FROM ".static::$tableName." ORDER BY id DESC LIMIT $offset, $pageSize";
         $stmt = static::$pdo->query($sql);
 
         $rows = $stmt->fetchAll();
@@ -103,7 +122,7 @@ class ActiveRecord {
     }
 
     public static function count() {
-        $sql = "SELECT COUNT(*) FROM blog";
+        $sql = "SELECT COUNT(*) FROM ".static::$tableName;
         $rows = static::$pdo->query($sql)->fetchColumn();
         return $rows;
     }
