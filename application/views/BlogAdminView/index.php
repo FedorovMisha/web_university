@@ -1,15 +1,15 @@
 <div class="container">
     <div class="row mt-5">
         <form action="/admin/create-blog" method="post" class="p-5 rounded shadow-sm mb-5" enctype= "multipart/form-data">
-            <label for="" class="h3 text-primary mb-5">Enter your comment</label>
+            <label for="" class="h3 text-primary mb-5">Enter your blog item</label>
             <div class="form-group mb-3">
                 <label for="exampleInputEmail1">Label</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter name" name="label">
+                    placeholder="Enter label" name="label">
                 <small id="emailHelp" class="form-text text-muted">Yor personal data</small>
             </div>
             <div class="mb-5">
-                <label for="formFile" class="form-label">Default file input example</label>
+                <label for="formFile" class="form-label">Input blog image</label>
                 <input class="form-control" type="file" name="image" id="formFile">
             </div>
             <div class="form-group mb-5">

@@ -23,26 +23,28 @@ class CommentService {
 
     function getAll() {
         $array = array();
+        $this->file = file("messages.inc");
 
         foreach($this->file as $items) {
             array_push($array, Comment::with_string($items));
         }
-        $array = array_reverse($array);
-        usort($array, 'date_compare');
+        usort($array, "date_compare");
         return $array;
     }
 
     function moveFile($fileName) {
-        move_uploaded_file($fileName, 'messages.inc');
+        // move_uploaded_file($fileName, 'messages_up.inc');
+
+        $h = fopen("messages.inc", "a+");
+        $c = file_get_contents($fileName);
+        fwrite($h, $c);
     }
+    
 }
 
-function date_compare($time1, $time2)
+function date_compare($a, $b)
 {
-    if (strtotime($time1->date) < strtotime($time2->date))
-        return 1;
-    else if (strtotime($time1->date) > strtotime($time2->date)) 
-        return -1;
-    else
-        return 0;
+    str_replace(".", "-", $a->date);
+    str_replace(".", "-", $b->date);
+    return strtotime($a->date) < strtotime($b->date);
 }

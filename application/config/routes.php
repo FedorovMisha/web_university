@@ -52,5 +52,9 @@ $routes = [
     'blogs' => [
         'controller' => 'BlogAdminViewController',
         'action' => 'blogs'
+    ],
+    'login' => [
+        'controller' => 'ApplicationViewController',
+        'action' => 'index'
     ]
 ];

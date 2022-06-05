@@ -24,7 +24,7 @@ class GuestBookViewController extends ViewController {
         if(!empty($_POST)) {
             $name = $_POST["name"];
             $email = $_POST["email"];
-            $date = date('d.m.y');
+            $date = date('m.d.y');
             $text = $_POST["commentText"];
 
             $comment = Comment::with_data($name, $email, $date, $text);
