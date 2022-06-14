@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="my-5">Views 123</h1>
+    <h1 class="my-5">Views</h1>
     <?php
         foreach($args["views"] as $item) {
             require "application/views/AdminView/view.php";

@@ -7,6 +7,7 @@ require_once 'application/core/Models/ViewStatistic.php';
 class AdminViewController extends ViewController {
 
     function views() {
+        parent::dropToLoginIfNotAdmin();
         ViewStatistic::setupConnection();
         return new AdminView([
             'controller' => "AdminViewController",

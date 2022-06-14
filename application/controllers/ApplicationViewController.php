@@ -36,13 +36,14 @@ class ApplicationViewController extends ViewController {
     }
 
     function postLogin() {
-        if (parent::authenticate()) {
-            header("Location: /"); 
+        
+        if (parent::adminAuthenticate()) {
+            header("Location: /admin/blog"); 
             exit();
         }
 
-        if (parent::adminAuthenticate()) {
-            header("Location: /admin/blog"); 
+        if (parent::authenticate()) {
+            header("Location: /"); 
             exit();
         }
 

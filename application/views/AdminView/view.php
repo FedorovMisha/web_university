@@ -3,4 +3,5 @@
     <p><?php echo $item->hostName; ?></p>
     <p><?php echo $item->ip; ?></p>
     <p><?php echo $item->brouserName; ?></p>
+    <p><?php echo $item->date; ?></p>
 </div>

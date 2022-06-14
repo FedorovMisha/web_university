@@ -29,7 +29,6 @@ class ApplicationUser extends ActiveRecord {
             'password' => $this->password,
             'name' => $this->name,
         ];
-        print_r($data);
         $sql = "INSERT INTO ApplicationUser (email, password, name) VALUES (:email, :password, :name)";
         $stmt= static::$pdo->prepare($sql);
         $stmt->execute($data);

@@ -19,6 +19,8 @@ abstract class ViewController {
             if ($_POST["login"] == "admin@gmail.com" && hash("ripemd160", $_POST["password"]) == hash("ripemd160", "admin")) {
                 $_SESSION["login"] = "admin@gmail.com";
                 $_SESSION["password"] = hash("ripemd160", "admin");
+                $_SESSION["userId"] = "00000";
+                $_SESSION["userName"] ="admin";
                 return true;
             }
             return false;
@@ -34,6 +36,8 @@ abstract class ViewController {
             if ($user->password == hash("ripemd160", $_POST["password"])) {
                 $_SESSION["login"] = $user->email;
                 $_SESSION["password"] = $user->password;
+                $_SESSION["userId"] = $user->id;
+                $_SESSION["userName"] = $user->name;
                 return true;
             }
         }
@@ -52,7 +56,8 @@ abstract class ViewController {
                 return;
             }
         } 
-        header("Location: /login"); 
+        $this->logout();
+        header("Location: /login");
         exit();
     }
 }

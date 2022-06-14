@@ -76,5 +76,25 @@ $routes = [
     'app/register' => [
         'controller' => 'ApplicationViewController',
         'action' => 'postRegister'
+    ], 
+    'api/check-email' => [
+        'controller' => 'ApiViewController',
+        'action' => 'check_email'
+    ], 
+    'api/send-comment' => [
+        'controller' => 'ApiViewController',
+        'action' => 'createComment'
+    ],
+    'api/editBlog' => [
+        'controller' => 'ApiViewController',
+        'action' => 'editBlog'
+    ],
+    'api-edit-blog' => [
+        'controller' => 'ApiViewController',
+        'action' => 'editBlogAlpha'
+    ],
+    'update-blog' => [
+        'controller' => 'ApiViewController',
+        'action' => 'updateBlog'
     ]
 ];

@@ -22,21 +22,24 @@ class Router {
                 }
             }
         } else {
-            echo "404";
+            echo "404-2";
         }
     }
 
     private function match() {
         include 'application/config/routes.php';
         $path = trim($_SERVER['REQUEST_URI'], "/");
-        $pos = strpos( $path, "?", 0 );
+        $pos = strpos($path, "?", 0 );
         $path = substr($path, 0, $pos > 0 ? $pos: strlen($path));
+    
         foreach($routes as $route => $args) {
             if(strcmp($route, $path) == 0) {
                 $this->config = $args;
                 return true;
             }
         }
+
+        echo $path;
         return false;
     }
 }
